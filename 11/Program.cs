@@ -41,7 +41,6 @@ namespace _11
         private static void CountFlashesAndClear()
         {
             flashes += points.Where(x => x.value > 9).Count();
-            Console.Write(Environment.NewLine);
             foreach (var item in points.Where(x => x.value > 9))
             {
                 item.value = 0;
