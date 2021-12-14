@@ -28,42 +28,24 @@ namespace _14
                 tmplist = new List<char>();
                 var sw = new Stopwatch();
                 sw.Start();
-                // for (int index = 0; index < start.Length; index += 2)
-                // {
-                // try
-                // {
-                //     start = start.Insert(index + 1, dic[start.Substring(index, 2)]);
-
-                // }
-                // catch (System.Exception ex)
-                // {
-                //     // TODO
-                // }
+                
                 char lastAdded;
-
                 lastAdded = valueList[0];
                 tmplist.Add(lastAdded);
 
                 for (int index = 1; index < valueList.Count; index++)
                 {
-
-                    //1
                     char second = valueList[index];
                     string key = string.Empty + tmplist.Last() + second;
                     lastAdded = dic[key];
                     tmplist.Add(lastAdded);
-                    tmplist.Add(second);
-                    //2
+                    tmplist.Add(second);                   
                 }
-
-                //end
                 valueList = tmplist;
                 sw.Stop();
                 Console.WriteLine($"stet {i} end { sw.Elapsed.TotalSeconds}");
 
             }
-            List<char> datalist = new List<char>();
-            datalist.AddRange(start);
             var counts = valueList.GroupBy(x => x)
                  .ToDictionary(g => g.Key, g => g.Count());
             Console.WriteLine($" stage 1 : {counts.Values.Max() - counts.Values.Min()}");
