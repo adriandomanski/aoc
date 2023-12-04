@@ -1,12 +1,6 @@
-/03
-/04
-/05
-/06
-/07
-/08
-/09
+.idea
+.vs
 bin
 obj
-03/advent.csproj
-/advent_02
-/advent_00
+ 
+ 
